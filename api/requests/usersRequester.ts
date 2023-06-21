@@ -14,11 +14,21 @@ export default class UsersRequester extends BasicRequester {
     return await this.client.post('users').send(body);
   }
 
-  async loginUser(username: string, password: string) {
-  let  body = {
-      "email": username,
+  async loginUser(testCase: UserParam) {
+    const {firstName, lastName, email, password, description, expectedMessage} = testCase;
+    let  body = {
+      "email": email,
       "password": password
+    }
+
+    return await this.client.post('users/login').send(body);
   }
-  return await this.client.post('users/login').send(body);
+
+  async deleteUser(token: string){
+    const header = {
+      'Authorization': `Bearer ${token}`,
+    }
+
+    return await this.client.delete('users/me').set(header);
   }
 }
