@@ -12,7 +12,6 @@ describe("#Unhappy path - User create endpoint ", () => {
     it("#TC - 2 - should not create user if " + description, async () => {
       const response = await userRequest.loginUserWithInvalidPassword(testCase);
       expect(response.statusCode).to.equal(401);
-      // expect(response.body).to.equal(expectedMessage)
     });
   });
 });
