@@ -36,4 +36,17 @@ export default class UserData {
       },
     ]
   }
+
+  getCreateUserData():  UserParam[] {
+    return [
+      {
+        firstName: 'userToBeCreated',
+        lastName: 'userToBeCreated',
+        email: 'test333@test.wp',
+        password: 'passPASS',
+        description: 'password too short',
+        expectedMessage: 'Email address is already in use'
+      },
+    ]
+  }
 }
