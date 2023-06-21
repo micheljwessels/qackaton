@@ -2,7 +2,7 @@ const { expect } = require("chai");
 import UserData from "../data/userData";
 import UsersRequester from "../requests/usersRequester";
 
-describe("User create endpoint ", () => {
+describe("#Unhappy path - User create endpoint ", () => {
   const userData = new UserData();
   const userRequest = new UsersRequester();
 
@@ -15,7 +15,7 @@ describe("User create endpoint ", () => {
       description,
       expectedMessage,
     } = testCase;
-    it("should not create user if " + description, async () => {
+    it("#TC - 1 - should not create user if " + description, async () => {
       const response = await userRequest.addUser(testCase);
       expect(response.statusCode).to.equal(400);
       // expect(response.body).to.equal(expectedMessage)

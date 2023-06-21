@@ -4,7 +4,7 @@ import UserData, { UserParam } from "../data/userData";
 import ContactRequester from "../requests/contactRequester";
 import UsersRequester from "../requests/usersRequester";
 
-describe('Contact add endpoint', () => {
+describe('#Unhappy path -  Contact add endpoint', () => {
   const userData = new UserData();
   const contactData = new ContactData();
   const userRequest = new UsersRequester();
@@ -17,7 +17,6 @@ describe('Contact add endpoint', () => {
     user = users[0];
     let response;
     response = await userRequest.loginUser(user);
-    console.log(response.statusCode)
     if(response.statusCode != 200){
       await  userRequest.addUser(user)
       response = await userRequest.loginUser(user);
@@ -27,7 +26,7 @@ describe('Contact add endpoint', () => {
 
 contactData.getContactsUnhappyPath().forEach(testCase => {
   const {firstName, lastName, birthdate, email, phone, street1, street2, city, stateProvince, postalCode, country, description, message} = testCase;
-    it('should not create contact if ' + description, async() => {
+    it('TC - 3 - should not create contact if ' + description, async() => {
     const contactResponse = await contactRequest.addContact(testCase, token);
     expect(contactResponse.statusCode).to.equal(400);
     expect(contactResponse.body['message']).to.equal(message)
