@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "ts-mocha './api/test/delete*' --recursive --timeout 10000"
+    "test": "ts-mocha './api/test/addCont*' --recursive --timeout 10000"
   },
   "dependencies": {
     "@types/chai": "^4.3.4",

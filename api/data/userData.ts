@@ -49,4 +49,17 @@ export default class UserData {
       },
     ]
   }
+
+  getReadyUserData():  UserParam[] {
+    return [
+      {
+        firstName: 'userToBeCreated',
+        lastName: 'userToBeCreated',
+        email: 'test3@fake.com',
+        password: 'myNewPassword',
+        description: 'password too short',
+        expectedMessage: 'Email address is already in use'
+      },
+    ]
+  }
 }
