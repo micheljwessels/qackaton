@@ -6,6 +6,6 @@ export default class BasicRequester {
 
   constructor(){
     this.url = 'https://thinking-tester-contact-list.herokuapp.com/';
-    this.client = request('https://thinking-tester-contact-list.herokuapp.com/')
+    this.client = request(this.url)
   }
 }
