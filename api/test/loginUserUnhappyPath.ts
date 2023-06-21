@@ -6,18 +6,11 @@ describe("User create endpoint ", () => {
   const userData = new UserData();
   const userRequest = new UsersRequester();
 
-  userData.getUsers().forEach((testCase) => {
-    const {
-      firstName,
-      lastName,
-      email,
-      password,
-      description,
-      expectedMessage,
-    } = testCase;
+  userData.getLoginUser().forEach((testCase) => {
+    const { email, password, description } = testCase;
     it("should not create user if " + description, async () => {
-      const response = await userRequest.addUser(testCase);
-      expect(response.statusCode).to.equal(400);
+      const response = await userRequest.loginUserWithInvalidPassword(testCase);
+      expect(response.statusCode).to.equal(401);
       // expect(response.body).to.equal(expectedMessage)
     });
   });
