@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "ts-mocha './api/test/**' --recursive --timeout 10000"
+    "test": "ts-mocha './api/test/**' --recursive"
   },
   "dependencies": {
     "@types/chai": "^4.3.4",
@@ -13,7 +13,8 @@
     "playwright": "^1.35.1",
     "supertest": "^6.3.3",
     "ts-mocha": "^10.0.0",
-    "typescript": "4.6.3"
+    "typescript": "4.6.3",
+    "mochawesome-report-generator": "^6.2.0"
   },
   "devDependencies": {
     "@types/supertest": "^2.0.12",
