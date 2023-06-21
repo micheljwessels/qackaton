@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/supertest": "^2.0.12",
-    "@playwright/test": "^1.35.1"
+    "@playwright/test": "^1.35.1",
     "chai": "^4.3.7"
   }
 }
